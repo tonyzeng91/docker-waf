@@ -1,0 +1,6 @@
+#!/bin/bash
+
+# Process ERB variables in Nginx configuration templates
+cd /usr/local/nginx/conf/ && erb nginx.conf.erb > nginx.conf
+
+exec /bin/nginx "$@"
