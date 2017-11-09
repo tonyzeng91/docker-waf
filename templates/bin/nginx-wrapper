@@ -3,4 +3,6 @@
 # Process ERB variables in Nginx configuration templates
 cd /usr/local/nginx/conf/ && erb nginx.conf.erb > nginx.conf
 
+tail -F /var/log/modsec_audit.log &
+
 exec /bin/nginx -g 'daemon off;' "$@"
