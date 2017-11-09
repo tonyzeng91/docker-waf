@@ -1,7 +1,15 @@
 #!/bin/bash
 
+#SECRULEENGINE=DetectionOnly/on/off
+SECRULEENGINE=${SECRULEENGINE:-DetectionOnly}
+export SECRULEENGINE
+
+#INTERNAL_ENDPOINT=http://elb-NNNN.on-aptible.com
+: ${INTERNAL_ENDPOINT:?"Error: INTERNAL_ENDPOINT environment variable not set"}
+
 # Process ERB variables in Nginx configuration templates
 cd /usr/local/nginx/conf/ && erb nginx.conf.erb > nginx.conf
+cd /usr/local/nginx/conf/ && erb modsecurity.conf.erb > modsecurity.conf
 
 tail -F /var/log/modsec_audit.log &
 

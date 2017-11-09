@@ -40,3 +40,13 @@ docker run --name my-container-name -p 80:80 mywaf
 ```
 
 This creates container.
+
+Environment Variables
+
+[SecRuleEngine] The possible values are:
+
+    On: process rules
+    Off: do not process rules
+    DetectionOnly: process rules but never executes any disruptive actions (block, deny, drop, allow, proxy and redirect)
+
+INTERNAL_ENDPOINT The https:// address of your App's internal Endpoint.
