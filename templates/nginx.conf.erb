@@ -20,11 +20,10 @@ http {
     keepalive_timeout  65;
 
     #gzip  on;
-
+    client_max_body_size 0;
     server {
         listen       80;
         server_name  localhost;
-	client_max_body_size  500M;
         #charset koi8-r;
 
         #access_log  logs/host.access.log  main;
