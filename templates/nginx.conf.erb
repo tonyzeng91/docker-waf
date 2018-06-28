@@ -24,7 +24,7 @@ http {
     server {
         listen       80;
         server_name  localhost;
-
+	client_max_body_size  500M;
         #charset koi8-r;
 
         #access_log  logs/host.access.log  main;
@@ -44,7 +44,6 @@ http {
 			proxy_set_header        Host            $host;
 			proxy_set_header        X-Real-IP       $remote_addr;
 			proxy_set_header        X-Forwarded-For $proxy_add_x_forwarded_for;
-			client_max_body_size 100M;
 		}
 		
         # redirect server error pages to the static page /50x.html
