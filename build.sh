@@ -41,6 +41,3 @@ mv /usr/local/nginx/conf/rules/RESPONSE-999-EXCLUSION-RULES-AFTER-CRS.conf{.exam
 
 apt-get purge -y build-essential wget git
 rm /nginx-1.14.0.tar.gz
-
-
-
